@@ -1,7 +1,20 @@
 @import 'variables';
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
 
 body {
   background-color: $favColor;
+  font-family: 'Nova Mono', monospace;
 }
+
+$theme-colors: (
+  "primary": #1D7FE0,
+  "secondary": #848C94,
+  "success": seagreen,
+  "danger": #00441d,
+  "warning": #E0C71A,
+  "info": #47322A,
+  "light": #f8f9fa,
+  "dark": #344140
+);
