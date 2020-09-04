@@ -11,7 +11,7 @@ import 'firebase/auth';
 import Auth from '../components/pages/Auth/Auth';
 import EditStuff from '../components/pages/EditStuff/EditStuff';
 import Home from '../components/pages/Home/Home';
-import Navbar from '../components/pages/NavBar/NavBar';
+import MyNavbar from '../components/pages/NavBar/NavBar';
 import NewItem from '../components/pages/NewItem/NewItem';
 import SingleThing from '../components/pages/SingleThing/SingleThing';
 
@@ -61,7 +61,7 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <React.Fragment>
-            <Navbar />
+            <MyNavbar authed={authed} />
             <div className="container">
               <Switch>
                 <PrivateRoute path="/home" component={Home} authed={authed} />
