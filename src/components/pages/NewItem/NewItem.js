@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
+import _ from 'underscore';
 import authData from '../../../helpers/data/authData';
 import itemData from '../../../helpers/data/stuffData';
 
@@ -38,7 +39,7 @@ class NewItem extends React.Component {
       'itemDescription',
     ];
 
-    const newItem = (this.state, keysIWant);
+    const newItem = _(this.state, keysIWant);
     newItem.uid = authData.getUid();
 
     itemData
@@ -93,7 +94,7 @@ class NewItem extends React.Component {
                     onChange={this.changeDescriptionEvent}
                     />
                   </div>
-                  <button className="btn btn-dark" onClick={this.saveItemEvent}>
+                  <button className="btn btn-dark" onClick={this.saveItem}>
                     Save Item
                   </button>
                 </form>
