@@ -19,10 +19,16 @@ componentDidMount() {
   this.getItems();
 }
 
+deleteItem = (itemId) => {
+  itemData.deleteItem(itemId)
+    .then(() => this.getItems())
+    .catch((err) => console.error('delete item failed', err));
+}
+
 render() {
   const { items } = this.state;
 
-  const itemCards = items.map((item) => <ItemCard key={item.id} item={item}/>);
+  const itemCards = items.map((item) => <ItemCard key={item.id} item={item} deleteItem={this.deleteItem}/>);
   return (
             <div className="Home">
                 <h1>Home</h1>
