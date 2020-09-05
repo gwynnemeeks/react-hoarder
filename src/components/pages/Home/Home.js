@@ -9,10 +9,14 @@ state = {
   items: [],
 }
 
-componentDidMount() {
+getItems = () => {
   itemData.getItemsByUid(authData.getUid())
     .then((items) => this.setState({ items }))
     .catch((err) => console.error('get items sucked', err));
+}
+
+componentDidMount() {
+  this.getItems();
 }
 
 render() {
