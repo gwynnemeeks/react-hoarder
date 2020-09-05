@@ -14,7 +14,7 @@ class ItemCard extends React.Component {
 <div className="card mb-3">
   <div className="row no-gutters">
     <div className="col-md-4">
-      <img src={item.itemImage} class="card-img" alt="..." />
+      <img src={item.itemImage} className="card-img" alt="..." />
     </div>
     <div className="col-md-8">
       <div className="card-body">
