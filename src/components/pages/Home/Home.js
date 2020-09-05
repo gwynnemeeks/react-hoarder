@@ -1,23 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import authData from '../../../helpers/data/authData';
+import itemData from '../../../helpers/data/stuffData';
+import ItemCard from '../../shared/ItemCard/ItemCard';
 
 class Home extends React.Component {
-  editItemEvent = (e) => {
-    e.preventDefault();
-    const itemId = 'coolThing01';
-    this.props.history.push(`/edit/${itemId}`);
-  }
+state = {
+  items: [],
+}
 
-  render() {
-    return (
+componentDidMount() {
+  itemData.getItemsByUid(authData.getUid())
+    .then((items) => this.setState({ items }))
+    .catch((err) => console.error('get items sucked', err));
+}
+
+render() {
+  const { items } = this.state;
+
+  const itemCards = items.map((item) => <ItemCard key={item.id} item={item}/>);
+  return (
             <div className="Home">
                 <h1>Home</h1>
-                <button className="btn btn-dark" onClick={this.editItemEvent}>Edit</button>
-                <Link to='/new'>New Item</Link>
-                <h2>Here is a link to a <Link to='/item/item01'>Specific Item</Link></h2>
+                  {itemCards}
             </div>
-    );
-  }
+  );
+}
 }
 
 export default Home;

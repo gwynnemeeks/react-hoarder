@@ -45,10 +45,10 @@ class MyNavbar extends React.Component {
                 <NavLink tag={RRNavLink} to="/home">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={RRNavLink} to="/new">New Birb</NavLink>
+                <NavLink tag={RRNavLink} to="/new">New Item</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink onClick={this.logMeOut}>Log Me Out</NavLink>
+                <NavLink onClick={this.logMeOut}><i className="fas fa-sign-out-alt fa-lg"></i></NavLink>
               </NavItem>
             </Nav>
         );
