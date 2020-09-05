@@ -14,6 +14,7 @@ class NewItem extends React.Component {
     itemName: '',
     itemImage: '',
     itemDescription: '',
+    uid: authData.getUid(),
   }
 
   changeNameEvent = (e) => {
@@ -37,6 +38,7 @@ class NewItem extends React.Component {
       'itemName',
       'itemImage',
       'itemDescription',
+      'uid',
     ];
 
     const newItem = _(this.state, keysIWant);
