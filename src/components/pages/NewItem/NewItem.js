@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import authData from '../../../helpers/data/authData';
 import itemData from '../../../helpers/data/stuffData';
 
 class NewItem extends React.Component {
-  static propTypes = {
-    createItem: PropTypes.func.isRequired,
-  }
+  // static propTypes = {
+  //   createItem: PropTypes.func.isRequired,
+  // }
 
   state = {
     itemName: '',
